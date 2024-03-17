@@ -23,7 +23,10 @@ function updateReducer(state = initialState, action) {
 const store = createStore(updateReducer);
 
 store.subscribe(() => {
-  console.log(store.getState());
+  console.log(
+    store.getState(),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 });
 
 store.dispatch({ type: "increment" });
